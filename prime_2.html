@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime</title>
+    <script>
+        function* primeGenerator(limit) {
+            for (let num = 2; num <= limit; num++) {
+              let isPrime = true;
+          
+              for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                  isPrime = false;
+                  break;
+                }
+              }
+          
+              if (isPrime) {
+                yield num;
+              }
+            }
+          }
+          num=prompt("Enter number:")
+          
+          const inputNumber = num; // Change this to the desired input number
+          console.log(`Prime numbers up to ${inputNumber}:`);
+          
+          const primesUpToLimit = primeGenerator(inputNumber);
+          for (const prime of primesUpToLimit) {
+            console.log(prime);
+          }
+          
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
